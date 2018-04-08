@@ -1,0 +1,28 @@
+---
+title: "Map"
+author: "Evan Petricca"
+date: "April 8, 2018"
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
+---
+
+
+```{R, learflet}
+library(leaflet)
+smileyIcon <- makeIcon(
+  iconUrl = "http://i0.kym-cdn.com/photos/images/original/000/134/120/1307972373001.png",
+  iconWidth = 20, iconHeight = 20
+)
+data.frame(
+  lat = c(40.785091),
+  lng = c(-73.968285	)
+) %>% 
+  leaflet() %>% 
+  addTiles() %>% 
+  addMarkers(icon = smileyIcon, popup = "Hello")
+
+
+```
+
